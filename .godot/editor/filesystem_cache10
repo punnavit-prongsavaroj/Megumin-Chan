@@ -1,0 +1,39 @@
+fc8a56933c4b1c8d796fdb8f7a9f9475
+::res://::1757755058
+character_body_3d.gd::GDScript/GDScript::8770798157356351096::1757686771::0::1::::<>CharacterBody3D<><>0<>0<><>::
+character_body_3d.tscn::PackedScene/PackedScene::7952921058501018442::1757657872::0::1::::<><><>0<>0<><>::uid://dw7v08o8ndy13::::res://character_body_3d.gd<>uid://be7l5obxoycwd::::res://megumin.tscn
+default_bus_layout.tres::AudioBusLayout/AudioBusLayout::-1::1757652839::0::1::::<><><>0<>0<><>::
+default_env.tres::Environment/Environment::-1::1757652839::0::1::::<><><>0<>0<><>::
+enimy.gd::GDScript/GDScript::6173689155796958367::1757685246::0::1::::<>CharacterBody3D<><>0<>0<><>::
+enimy.tscn::PackedScene/PackedScene::417678890925234117::1757687354::0::1::::<><><>0<>0<><>::uid://ct7t01yq361pb::::res://enimy.gd<>uid://br38aopcl1g8v::::res://art/Frog.glb
+export_presets.cfg::TextFile::-1::1757754965::0::1::::<><><>0<>0<><>::
+icon.png::CompressedTexture2D/CompressedTexture2D::645727437117185937::1757652830::1757652846::1::::<><><>0<>0<>b8f51547cea883e1fd192e2280175957<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
+label.gd::GDScript/GDScript::2738074964425887848::1757684374::0::1::::<>Label<><>0<>0<><>::
+main.gd::GDScript/GDScript::4724548359795427079::1757686690::0::1::::<>Node<><>0<>0<><>::
+main.tscn::PackedScene/PackedScene::9170255267138780328::1757692492::0::1::::<><><>0<>0<><>::uid://b8kuveeps3ugl::::res://main.gd<>uid://boyfpxgbkm6g6::::res://Meguminn.tscn<>uid://f7ld0rvctsv2::::res://enimy.tscn<>uid://bfalxu8ugcx0k::::res://label.gd<>uid://csvgms2bq0ore::::res://art/ตายเฟสสอง.mp3
+Megumin.fbx::PackedScene/PackedScene::2998273865015666353::1757653219::1757653220::1::::<><><>0<>0<>c39688742639274045afc4f96091278a<>res://.godot/imported/Megumin.fbx-9cdf4d278c136885517dfc5b615e26e1.scn::
+megumin.gd::GDScript/GDScript::5468075779621902482::1757659950::0::1::::<>Node3D<><>0<>0<><>::
+megumin.tscn::PackedScene/PackedScene::2733958345049097655::1757687353::0::1::::<><><>0<>0<><>::uid://biynerf6hly0x::::res://Megumin.fbx<>uid://cj51n6a8l0pyo::::res://megumin.gd
+Meguminn.tscn::PackedScene/PackedScene::3418941149960581127::1757687353::0::1::::<><><>0<>0<><>::uid://dw7v08o8ndy13::::res://character_body_3d.gd<>uid://be7l5obxoycwd::::res://megumin.tscn
+static_body_3d.tscn::PackedScene/PackedScene::1116826867556965597::1757657408::0::1::::<><><>0<>0<><>::
+::res://animation/::1757654600
+Falling Forward Death.fbx::PackedScene/PackedScene::712844066889083265::1757654599::1757654600::1::::<><><>0<>0<>92d7351a5f0b8657f93086eecf5c246c<>res://.godot/imported/Falling Forward Death.fbx-80090d956d4013187cc194dc33c5d85a.scn::
+Female Standing Pose.fbx::PackedScene/PackedScene::5589590692956582857::1757654599::1757654600::1::::<><><>0<>0<>3b3d175100c78265cad583c6f195fd5e<>res://.godot/imported/Female Standing Pose.fbx-bfef4ebaaa581334e0cdd63c5cdb1081.scn::
+Standing Block Idle.fbx::PackedScene/PackedScene::4986912461289562226::1757654599::1757654600::1::::<><><>0<>0<>4c59e1ab0e3c369eb663afce2fd5c02b<>res://.godot/imported/Standing Block Idle.fbx-f1f932f9e3cf94f7a8a49ae0c55fd70b.scn::
+Standing Sprint Forward.fbx::PackedScene/PackedScene::225472538785230341::1757654599::1757654600::1::::<><><>0<>0<>aa9112629435b866a0886dbcbb1cb620<>res://.godot/imported/Standing Sprint Forward.fbx-6388625df4b8bf45a373bf924ff5af31.scn::
+Two Hand Club Combo.fbx::PackedScene/PackedScene::3681743723679060748::1757654599::1757654600::1::::<><><>0<>0<>ce723b572bf8fbeac4ca2b09e24aa698<>res://.godot/imported/Two Hand Club Combo.fbx-67e23915f388b1186610c5ff63240882.scn::
+::res://art/::1757689176
+body.material::StandardMaterial3D/StandardMaterial3D::-1::1757652830::0::1::::<><><>0<>0<><>::
+eye.material::StandardMaterial3D/StandardMaterial3D::-1::1757652830::0::1::::<><><>0<>0<><>::
+Frog.glb::PackedScene/PackedScene::3639438022020187407::1757686959::1757686961::1::::<><><>0<>0<>744a539771ecc844042d893914d496c5<>res://.godot/imported/Frog.glb-76d33f0fad8c1761b9141defa5cd984a.scn::
+Frog_01.obj::Mesh/Mesh::2018830907830358266::1757686932::1757686932::1::::<><><>0<>0<>d7a62978dd96a30f0cfbba306b7b43b6<>res://.godot/imported/Frog_01.obj-48b1bb8d6746ca7e3c759164c3831a0d.mesh<*>res://.godot/imported/Frog_01.obj-48b1bb8d6746ca7e3c759164c3831a0d.mesh::
+House In a Forest Loop.ogg::AudioStreamOggVorbis/AudioStreamOggVorbis::5026818156566031119::1757652830::1757652846::1::::<><><>0<>0<>171f2968df6cf172504c12a5f7bde5bf<>res://.godot/imported/House In a Forest Loop.ogg-1a6a72ae843ad792b7039931227e8d50.oggvorbisstr::
+mob.glb::PackedScene/PackedScene::6056896092571810737::1757652830::1757652847::1::::<><><>0<>0<>0b6cd4d468eba6b63babee1a1df01d79<>res://.godot/imported/mob.glb-3afb43c03b9d1598b6af5154e2543eac.scn::
+mob_body.material::StandardMaterial3D/StandardMaterial3D::-1::1757652830::0::1::::<><><>0<>0<><>::
+mob_eye.material::StandardMaterial3D/StandardMaterial3D::-1::1757652830::0::1::::<><><>0<>0<><>::
+player.glb::PackedScene/PackedScene::2445888462992154440::1757652830::1757652847::1::::<><><>0<>0<>721564dee0871b3efc8d84f909c49c12<>res://.godot/imported/player.glb-08dcfb373480a049995065542e37637b.scn::
+pupil.material::StandardMaterial3D/StandardMaterial3D::-1::1757652830::0::1::::<><><>0<>0<><>::
+ตายเฟสสอง.mp3::AudioStreamMP3/AudioStreamMP3::6079979204387335846::1757689176::1757689176::1::::<><><>0<>0<>8859fad877c83fb225b30b1edc1b7887<>res://.godot/imported/ตายเฟสสอง.mp3-0393620cb35a31dd4e766bf9b0fcf69e.mp3str::
+::res://fonts/::1757652846
+LICENSE.txt::TextFile/TextFile::-1::1757652830::0::1::::<><><>0<>0<><>::
+Montserrat-Medium.ttf::FontFile/FontFile::2730222268297937010::1757652830::1757652846::1::::<><><>0<>0<>6054a004c427448e0d820d91bfd1c6f2<>res://.godot/imported/Montserrat-Medium.ttf-e832861e4ad4110e172112dc430c04b0.fontdata::

@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3we08yjx104k"]
+
+[ext_resource type="Script" uid="uid://b8kuveeps3ugl" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://boyfpxgbkm6g6" path="res://Meguminn.tscn" id="2_0xm2m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3wdy0"]
+size = Vector3(100, 0.17, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wago0"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="Curve3D" id="Curve3D_0xm2m"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_h2yge"]
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_ig7tw")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Meguminn" parent="Pivot" instance=ExtResource("2_0xm2m")]
+
+[node name="Camera3D" type="Camera3D" parent="Pivot/Meguminn"]
+transform = Transform3D(-1, -5.28557e-08, 6.96349e-08, 0, 0.79653, 0.604599, -8.74228e-08, 0.604599, -0.79653, 0, 3, -2)
+
+[node name="grond" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grond"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0778016, 0)
+shape = SubResource("BoxShape3D_3wdy0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="grond"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09237, 0)
+mesh = SubResource("BoxMesh_wago0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="grond"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29179, 7.8624, 7.79015)
+shadow_enabled = true
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(0.871501, 0, 0, 0, 0.871501, 0, 0, 0, 0.871501, 0, 0, 0)
+curve = SubResource("Curve3D_0xm2m")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+
+[node name="Cylinders3" type="Node3D" parent="."]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -1, 0, -1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinders3"]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.49, -2, 0, -3)
+mesh = SubResource("CylinderMesh_h2yge")
+skeleton = NodePath("../../Cylinders3")
+
+[node name="Cylinders4" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinders4"]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.49, -2, 0, -3)
+mesh = SubResource("CylinderMesh_h2yge")
+skeleton = NodePath("../../Cylinders3")
+
+[node name="Cylinders2" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinders2"]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.49, -2, 0, -3)
+mesh = SubResource("CylinderMesh_h2yge")
+skeleton = NodePath("../../Cylinders2")
+
+[node name="Cylinders" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.49, -2, 0, -3)
+mesh = SubResource("CylinderMesh_h2yge")
+
+[node name="ModTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="ModTimer" to="." method="_on_mod_timer_timeout"]

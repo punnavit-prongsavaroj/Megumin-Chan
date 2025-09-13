@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://boyfpxgbkm6g6"]
+
+[ext_resource type="Script" uid="uid://dw7v08o8ndy13" path="res://character_body_3d.gd" id="1_wvupp"]
+[ext_resource type="PackedScene" uid="uid://be7l5obxoycwd" path="res://megumin.tscn" id="2_rvs3q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iwpo4"]
+size = Vector3(0.325, 1.72, 0.285)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wvupp"]
+size = Vector3(0.595, 1.925, 0.54)
+
+[node name="Meguminn" type="CharacterBody3D"]
+script = ExtResource("1_wvupp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.828073, 0)
+shape = SubResource("BoxShape3D_iwpo4")
+
+[node name="Megumin" parent="." instance=ExtResource("2_rvs3q")]
+
+[node name="MobDetector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MobDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.857537, 0)
+shape = SubResource("BoxShape3D_wvupp")
+
+[connection signal="hit" from="." to="." method="_on_player_hit"]
+[connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]

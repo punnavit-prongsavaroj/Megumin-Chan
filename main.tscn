@@ -1,0 +1,130 @@
+[gd_scene load_steps=10 format=3 uid="uid://d3we08yjx104k"]
+
+[ext_resource type="Script" uid="uid://b8kuveeps3ugl" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://boyfpxgbkm6g6" path="res://Meguminn.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://f7ld0rvctsv2" path="res://enimy.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://bfalxu8ugcx0k" path="res://label.gd" id="4_1bvp3"]
+[ext_resource type="AudioStream" uid="uid://csvgms2bq0ore" path="res://art/ตายเฟสสอง.mp3" id="5_lquwl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3wdy0"]
+size = Vector3(100, 0.17, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wago0"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="Curve3D" id="Curve3D_h2yge"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -35.2739, 0, -37.9258, 0, 0, 0, 0, 0, 0, 33.0204, 0, -38.2022, 0, 0, 0, 0, 0, 0, 32.744, 0, 38.94, 0, 0, 0, 0, 0, 0, -34.7209, 0, 38.1105),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_h2yge"]
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_ig7tw")
+
+[node name="piivot-mouse" type="Marker3D" parent="."]
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Meguminn" parent="Pivot" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Pivot/Meguminn"]
+transform = Transform3D(-1, -5.28557e-08, 6.96349e-08, -2.26267e-08, 0.925871, 0.377841, -8.44439e-08, 0.377841, -0.925871, 0, 2, -2)
+
+[node name="grond" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grond"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0778016, 0)
+shape = SubResource("BoxShape3D_3wdy0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="grond"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09237, 0)
+mesh = SubResource("BoxMesh_wago0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="grond"]
+transform = Transform3D(0.183013, -0.707107, 0.683013, 0.183013, 0.707107, 0.683013, -0.965926, 0, 0.258819, 0.29179, 7.8624, 7.79015)
+shadow_enabled = true
+
+[node name="SpawnPath" type="Path3D" parent="."]
+transform = Transform3D(0.871501, 0, 0, 0, 0.871501, 0, 0, 0, 0.871501, 0, 0, 0)
+curve = SubResource("Curve3D_h2yge")
+
+[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
+transform = Transform3D(0.0040471, 0, -0.999992, 0, 1, 0, 0.999992, 0, 0.0040471, -35.2739, 0, -37.9258)
+
+[node name="Cylinders" type="Node3D" parent="."]
+transform = Transform3D(21.46, 0, 0, 0, 1, 0, 0, 0, 14.49, 0, 0, 0)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.49, -2, 0, -3)
+mesh = SubResource("CylinderMesh_h2yge")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(6.5567e-08, 0, -0.49, 0, 1, 0, 0.5, 0, 6.42557e-08, 2, 0, -3)
+mesh = SubResource("CylinderMesh_h2yge")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(-0.5, 0, -4.28372e-08, 0, 1, 0, 4.37114e-08, 0, -0.49, 2, 0, 3)
+mesh = SubResource("CylinderMesh_h2yge")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(-2.18557e-08, 0, 0.49, 0, 1, 0, -0.5, 0, -2.14186e-08, -2, 0, 3)
+mesh = SubResource("CylinderMesh_h2yge")
+skeleton = NodePath("")
+
+[node name="ModTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="Enimy" parent="." instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 0)
+visible = false
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 727.0
+offset_bottom = 539.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 29.0
+offset_right = 81.0
+offset_bottom = 52.0
+text = "Score 0"
+script = ExtResource("4_1bvp3")
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 25.0
+offset_right = 684.0
+offset_bottom = 48.0
+text = "673380281-0 ปุณณณวิชญ์ พงษ์สวโรจน์"
+
+[node name="Label3" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 433.0
+offset_right = 69.0
+offset_bottom = 456.0
+text = "Name: Megumin
+Class: Arch Wizard"
+
+[node name="coldown" type="Timer" parent="."]
+autostart = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_lquwl")
+volume_db = -19.143
+autoplay = true
+
+[connection signal="timeout" from="ModTimer" to="." method="_on_mod_timer_timeout"]
+[connection signal="timeout" from="coldown" to="Pivot/Meguminn" method="colddown_on_coldown_timeout"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://f7ld0rvctsv2"]
+
+[ext_resource type="Script" uid="uid://ct7t01yq361pb" path="res://enimy.gd" id="1_mf0qb"]
+[ext_resource type="PackedScene" uid="uid://br38aopcl1g8v" path="res://art/Frog.glb" id="2_mf0qb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_slebx"]
+size = Vector3(1.865, 2.085, 2.675)
+
+[node name="Enimy" type="CharacterBody3D" groups=["mob"]]
+script = ExtResource("1_mf0qb")
+
+[node name="Frog" parent="." instance=ExtResource("2_mf0qb")]
+transform = Transform3D(0.145, 0, 0, 0, 0.145, 0, 0, 0, 0.145, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["mob"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01627, 0)
+shape = SubResource("BoxShape3D_slebx")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(0.953414, 0, 0, 0, 0.404349, 0, 0, 0, 1.36347, 0, 0.154406, 0)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
